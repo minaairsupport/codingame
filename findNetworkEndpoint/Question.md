@@ -20,5 +20,10 @@ traversed before closing the loop.
 Constraints:
 
 0 < number of links < 10000
+
 A node cannot be directly linked to itself
 
+
+
+![Screen Shot 2022-10-22 at 3 21 27 PM](https://user-images.githubusercontent.com/33718103/197343518-77027510-909f-4d3f-bc95-92d546d547bd.png)
+![Screen Shot 2022-10-22 at 3 21 34 PM](https://user-images.githubusercontent.com/33718103/197343515-7e97d6a7-5700-46e3-a2a7-5204f1f19880.png)
