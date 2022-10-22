@@ -1,0 +1,61 @@
+function computeJoinPoint(s1, s2) {
+    // Write your code here
+    // To debug: console.error('Debug messages...');
+    
+    if(s1 == s2) {
+        return s1;
+    }
+
+    // next1 is the next point following s1
+    let next1 = s1 + sumDigits(s1);
+
+    // next2 is the next point following s2
+    let next2 = s2 + sumDigits(s2);
+
+    // if next1 equals s2, the join point is next1 (as well s2)
+    if(next1 == s2) {
+        return next1;
+    }
+
+    // if next2 equals s1, the join point is next2 (as well s1)
+    if(next2 == s1) {
+        return next2;
+    }
+
+    // if next1 equals next2, the join point is next1 (as well next2)
+    if(next1 == next2) {
+        return next1;
+    }
+
+    // If next 1 is strictly less than s2, then compute join of next1 and s2
+    if(next1 < s2) {
+        return computeJoinPoint(next1, s2);
+    }
+
+    // If next2 is strictly less than s1, then compute join of next2 and s1
+    if(next2 < s1) {
+        return computeJoinPoint(next2, s1);
+    }
+
+    // Otherwise, compute join of next1 and next2
+    return computeJoinPoint(next1, next2);
+}
+
+function sumDigits(value){
+    let sum = 0;
+    while (value) {
+        sum += value % 10;
+        value = Math.floor(value / 10);
+    }
+    return sum
+}
+
+/* Ignore and do not change the code below */
+const s1 = parseInt(readline());
+const s2 = parseInt(readline());
+const oldWrite = process.stdout.write;
+process.stdout.write = chunk => { console.error(chunk); return true }
+const res = computeJoinPoint(s1, s2);
+process.stdout.write = oldWrite;
+console.log(res);
+/* Ignore and do not change the code above */

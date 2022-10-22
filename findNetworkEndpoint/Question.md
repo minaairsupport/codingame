@@ -21,4 +21,3 @@ Constraints:
 
 0 < number of links < 10000
 A node cannot be directly linked to itself
-
